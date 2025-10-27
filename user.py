@@ -11,6 +11,9 @@ class User(db.Model):
         return f'<User {self.username}>'
 
     def to_dict(self):
-        retu            'id': self.id,
-            'username': self.username,
-            'email': self.email     }
+    return {
+        'id': self.id,
+        'name': self.name,
+        'email': self.email
+    }
+
