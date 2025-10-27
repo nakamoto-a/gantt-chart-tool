@@ -1,0 +1,405 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+
+/* ガントチャート専用スタイル */
+.gantt-container {
+  width: 100%;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.gantt-header {
+  display: flex;
+  border-bottom: 2px solid #e2e8f0;
+  background: #f8fafc;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.gantt-header::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.gantt-task-column {
+  width: 250px;
+  min-width: 250px;
+  padding: 12px 16px;
+  border-right: 1px solid #e2e8f0;
+  background: #f8fafc;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  left: 0;
+  z-index: 21;
+}
+
+.gantt-timeline-header {
+  flex: 1;
+  display: flex;
+  min-width: 2000px;
+  position: relative;
+}
+
+.gantt-time-label {
+  flex: 1;
+  padding: 12px 8px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  border-right: 1px solid #e2e8f0;
+  position: relative;
+}
+
+.gantt-time-label.today {
+  background: #fef3c7;
+  color: #92400e;
+  font-weight: 600;
+}
+
+.gantt-body {
+  max-height: 600px;
+  overflow-y: auto;
+  overflow-x: auto;
+  position: relative;
+  scrollbar-width: thin; /* Firefox */
+}
+
+.gantt-row {
+  display: flex;
+  border-bottom: 1px solid #e2e8f0;
+  min-height: 60px;
+}
+
+.gantt-row:hover {
+  background: #f8fafc;
+}
+
+.gantt-task-info {
+  width: 250px;
+  min-width: 250px;
+  padding: 12px 16px;
+  border-right: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: sticky;
+  left: 0;
+  background: white;
+  z-index: 30;
+}
+
+.gantt-row:hover .gantt-task-info {
+  background: #f8fafc;
+}
+
+.gantt-timeline {
+  flex: 1;
+  position: relative;
+  min-width: 2000px;
+  padding: 8px 0;
+}
+
+.gantt-today-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #ef4444;
+  z-index: 5;
+  left: 50%; /* 仮の位置、実際は計算で決定 */
+  transform: translateX(-50%);
+}
+
+.gantt-task-bar {
+  position: absolute;
+  height: 32px;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  border-radius: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gantt-task-bar:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-50%) scale(1.02);
+}
+
+.gantt-task-bar.milestone {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  height: 36px;
+  border-radius: 8px;
+}
+
+.gantt-task-bar.milestone::before {
+  content: '◆';
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #f59e0b;
+  font-size: 16px;
+  z-index: 2;
+}
+
+.gantt-task-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 6px 0 0 6px;
+  transition: width 0.3s ease;
+}
+
+.gantt-task-content {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  z-index: 1;
+}
+
+.gantt-task-content span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .gantt-task-column,
+  .gantt-task-info {
+    width: 200px;
+    min-width: 200px;
+  }
+  
+  .gantt-timeline-header,
+  .gantt-timeline {
+    min-width: 2000px;
+  }
+  
+  .gantt-task-content {
+    padding: 0 8px;
+  }
+  
+  .gantt-task-content span {
+    font-size: 11px;
+  }
+}
+
+/* スクロールバーのスタイリング */
+.gantt-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.gantt-container::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.gantt-container::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.gantt-container::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.gantt-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.gantt-body::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.gantt-body::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.gantt-body::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+
+/* 全プロジェクト表示用のスタイル */
+.gantt-project-header {
+  display: flex;
+  border-bottom: 2px solid #3b82f6;
+  background: #eff6ff;
+  min-height: 50px;
+}
+
+.gantt-project-header .gantt-task-info {
+  background: #eff6ff;
+  border-bottom: none;
+}
+
+.gantt-project-header .gantt-timeline {
+  background: #eff6ff;
+}
+
+/* プロジェクト間の区切り線 */
+.gantt-project-separator {
+  height: 2px;
+  background: #e2e8f0;
+  margin: 8px 0;
+}
+
+/* 全プロジェクト表示時の本日ライン調整 */
+.gantt-project-header .gantt-today-line {
+  opacity: 0.6;
+}
+
+/* 完了タスクのスタイル */
+.gantt-row.completed {
+  opacity: 0.7;
+}
+
+.gantt-row.completed .gantt-task-info {
+  background: #f9fafb;
+}
+
+.gantt-task-bar.completed {
+  background: linear-gradient(135deg, #9ca3af, #6b7280);
+  opacity: 0.8;
+}
+
+.gantt-task-bar.completed .gantt-task-content span {
+  text-decoration: line-through;
+}
+

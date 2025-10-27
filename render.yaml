@@ -1,0 +1,23 @@
+services:
+  # Web Service
+  - type: web
+    name: gantt-chart-tool
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn main:app"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: gantt-chart-db
+          property: connectionString
+
+databases:
+  # PostgreSQL Database
+  - name: gantt-chart-db
+    databaseName: gantt_chart
+    user: gantt_user
+

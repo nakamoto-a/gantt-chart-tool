@@ -1,0 +1,643 @@
+[2025-10-24 01:34:53 -0400] [2635] [INFO] Starting gunicorn 23.0.0
+[2025-10-24 01:34:53 -0400] [2635] [ERROR] Connection in use: ('0.0.0.0', 5000)
+[2025-10-24 01:34:53 -0400] [2635] [ERROR] connection to ('0.0.0.0', 5000) failed: [Errno 98] Address already in use
+[2025-10-24 01:34:54 -0400] [2635] [ERROR] Connection in use: ('0.0.0.0', 5000)
+[2025-10-24 01:34:54 -0400] [2635] [ERROR] connection to ('0.0.0.0', 5000) failed: [Errno 98] Address already in use
+[2025-10-24 01:34:55 -0400] [2635] [ERROR] Connection in use: ('0.0.0.0', 5000)
+[2025-10-24 01:34:55 -0400] [2635] [ERROR] connection to ('0.0.0.0', 5000) failed: [Errno 98] Address already in use
+[2025-10-24 01:34:56 -0400] [2635] [ERROR] Connection in use: ('0.0.0.0', 5000)
+[2025-10-24 01:34:56 -0400] [2635] [ERROR] connection to ('0.0.0.0', 5000) failed: [Errno 98] Address already in use
+[2025-10-24 01:34:57 -0400] [2635] [ERROR] Connection in use: ('0.0.0.0', 5000)
+[2025-10-24 01:34:57 -0400] [2635] [ERROR] connection to ('0.0.0.0', 5000) failed: [Errno 98] Address already in use
+[2025-10-24 01:34:58 -0400] [2635] [ERROR] Can't connect to ('0.0.0.0', 5000)
+[2025-10-24 01:35:14 -0400] [2664] [INFO] Starting gunicorn 23.0.0
+[2025-10-24 01:35:14 -0400] [2664] [INFO] Listening at: http://0.0.0.0:5000 (2664)
+[2025-10-24 01:35:14 -0400] [2664] [INFO] Using worker: sync
+[2025-10-24 01:35:14 -0400] [2665] [INFO] Booting worker with pid: 2665
+[2025-10-24 01:35:14 -0400] [2666] [INFO] Booting worker with pid: 2666
+[2025-10-24 01:35:14 -0400] [2667] [INFO] Booting worker with pid: 2667
+[2025-10-24 01:35:14 -0400] [2668] [INFO] Booting worker with pid: 2668
+[2025-10-24 01:59:57 -0400] [2664] [CRITICAL] WORKER TIMEOUT (pid:2666)
+[2025-10-24 01:59:57 -0400] [2666] [INFO] Worker exiting (pid: 2666)
+[2025-10-24 01:59:57 -0400] [2664] [ERROR] Worker (pid:2666) exited with code 1
+[2025-10-24 01:59:57 -0400] [2664] [ERROR] Worker (pid:2666) exited with code 1.
+[2025-10-24 01:59:57 -0400] [3231] [INFO] Booting worker with pid: 3231
+[2025-10-24 02:05:30 -0400] [2668] [INFO] Worker exiting (pid: 2668)
+[2025-10-24 02:05:30 -0400] [2667] [INFO] Worker exiting (pid: 2667)
+[2025-10-24 02:05:30 -0400] [3231] [INFO] Worker exiting (pid: 3231)
+[2025-10-24 02:05:30 -0400] [2664] [INFO] Handling signal: term
+[2025-10-24 02:05:30 -0400] [2665] [INFO] Worker exiting (pid: 2665)
+[2025-10-24 02:05:30 -0400] [2664] [INFO] Shutting down: Master
+[2025-10-24 02:05:37 -0400] [3525] [INFO] Starting gunicorn 23.0.0
+[2025-10-24 02:05:37 -0400] [3525] [INFO] Listening at: http://0.0.0.0:5000 (3525)
+[2025-10-24 02:05:37 -0400] [3525] [INFO] Using worker: sync
+[2025-10-24 02:05:37 -0400] [3526] [INFO] Booting worker with pid: 3526
+[2025-10-24 02:05:37 -0400] [3527] [INFO] Booting worker with pid: 3527
+[2025-10-24 02:05:37 -0400] [3528] [INFO] Booting worker with pid: 3528
+[2025-10-24 02:05:37 -0400] [3529] [INFO] Booting worker with pid: 3529
+[2025-10-24 02:05:38 -0400] [3527] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: user.email
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ubuntu/gantt-chart-tool/main.py", line 51, in <module>
+    db.session.commit()
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/scoping.py", line 599, in commit
+    return self._proxied.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/session.py", line 4345, in flush
+    self._flush(objects)
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/session.py", line 4480, in _flush
+    with util.safe_reraise():
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/session.py", line 4441, in _flush
+    flush_context.execute()
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/base.py", line 1415, in execute
+    return meth(
+           ^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/sql/elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.email
+[SQL: INSERT INTO user (last_name, first_name, email, password_hash, is_admin, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('管理者', '太郎', 'admin@gantt.local', 'scrypt:32768:8:1$XA9czpejjMcbmyUV$e8029a591a6bb9f29c738369984db334ceab9b2baae05808431898762c47735700850ffe4cfa9f046186fc595d5c144bf91015af46836716fc2a5a6be12c718d', 1, '2025-10-24 06:05:38.741984', '2025-10-24 06:05:38.741988')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2025-10-24 02:05:38 -0400] [3527] [INFO] Worker exiting (pid: 3527)
+[2025-10-24 02:05:38 -0400] [3525] [ERROR] Worker (pid:3527) exited with code 3
+[2025-10-24 02:05:38 -0400] [3526] [INFO] Worker exiting (pid: 3526)
+[2025-10-24 02:05:38 -0400] [3528] [INFO] Worker exiting (pid: 3528)
+[2025-10-24 02:05:38 -0400] [3529] [INFO] Worker exiting (pid: 3529)
+[2025-10-24 02:05:39 -0400] [3525] [ERROR] Shutting down: Master
+[2025-10-24 02:05:39 -0400] [3525] [ERROR] Reason: Worker failed to boot.
+[2025-10-24 02:06:14 -0400] [3566] [INFO] Starting gunicorn 23.0.0
+[2025-10-24 02:06:14 -0400] [3566] [INFO] Listening at: http://0.0.0.0:5000 (3566)
+[2025-10-24 02:06:14 -0400] [3566] [INFO] Using worker: sync
+[2025-10-24 02:06:14 -0400] [3567] [INFO] Booting worker with pid: 3567
+[2025-10-24 02:06:14 -0400] [3568] [INFO] Booting worker with pid: 3568
+[2025-10-24 02:06:14 -0400] [3569] [INFO] Booting worker with pid: 3569
+[2025-10-24 02:06:15 -0400] [3570] [INFO] Booting worker with pid: 3570
+[2025-10-24 02:06:16 -0400] [3568] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: user.email
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ubuntu/gantt-chart-tool/main.py", line 51, in <module>
+    db.session.commit()
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/scoping.py", line 599, in commit
+    return self._proxied.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/session.py", line 4345, in flush
+    self._flush(objects)
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/session.py", line 4480, in _flush
+    with util.safe_reraise():
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/session.py", line 4441, in _flush
+    flush_context.execute()
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/base.py", line 1415, in execute
+    return meth(
+           ^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/sql/elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.email
+[SQL: INSERT INTO user (last_name, first_name, email, password_hash, is_admin, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('管理者', '太郎', 'admin@gantt.local', 'scrypt:32768:8:1$8ZakCATSVFdT65wL$86c8caf5aa16f2cb8d7e10aae3b1f430b3c1a19be9142aa9a10d683827ace2fc7e0bf5152f6be1fe600341867072c94f4915c020d4e1216ab6551e6a2545fff9', 1, '2025-10-24 06:06:16.026996', '2025-10-24 06:06:16.027000')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2025-10-24 02:06:16 -0400] [3568] [INFO] Worker exiting (pid: 3568)
+[2025-10-24 02:06:16 -0400] [3569] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: user.email
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ubuntu/gantt-chart-tool/main.py", line 51, in <module>
+    db.session.commit()
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/scoping.py", line 599, in commit
+    return self._proxied.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/session.py", line 4345, in flush
+    self._flush(objects)
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/session.py", line 4480, in _flush
+    with util.safe_reraise():
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/session.py", line 4441, in _flush
+    flush_context.execute()
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/orm/persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/base.py", line 1415, in execute
+    return meth(
+           ^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/sql/elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.email
+[SQL: INSERT INTO user (last_name, first_name, email, password_hash, is_admin, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('管理者', '太郎', 'admin@gantt.local', 'scrypt:32768:8:1$O1UBbCrEAHibGAWk$7d51ce081fb83fba1903870965860dbe1369fda6c86e3b4b59ad1e72f8d8aaad95c267402dc3adbbaeb4546618f9b6578e385ba60ed8673871e3be529a39c657', 1, '2025-10-24 06:06:16.096177', '2025-10-24 06:06:16.096181')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2025-10-24 02:06:16 -0400] [3569] [INFO] Worker exiting (pid: 3569)
+[2025-10-24 02:06:16 -0400] [3566] [ERROR] Worker (pid:3568) exited with code 3
+[2025-10-24 02:06:16 -0400] [3570] [INFO] Worker exiting (pid: 3570)
+[2025-10-24 02:06:16 -0400] [3567] [INFO] Worker exiting (pid: 3567)
+[2025-10-24 02:06:16 -0400] [3566] [ERROR] Worker (pid:3569) was sent SIGTERM!
+[2025-10-24 02:06:16 -0400] [3566] [ERROR] Shutting down: Master
+[2025-10-24 02:06:16 -0400] [3566] [ERROR] Reason: Worker failed to boot.
+[2025-10-24 02:06:50 -0400] [3607] [INFO] Starting gunicorn 23.0.0
+[2025-10-24 02:06:50 -0400] [3607] [INFO] Listening at: http://0.0.0.0:5000 (3607)
+[2025-10-24 02:06:50 -0400] [3607] [INFO] Using worker: sync
+[2025-10-24 02:06:50 -0400] [3608] [INFO] Booting worker with pid: 3608
+[2025-10-24 02:06:50 -0400] [3609] [INFO] Booting worker with pid: 3609
+[2025-10-24 02:06:50 -0400] [3610] [INFO] Booting worker with pid: 3610
+[2025-10-24 02:06:50 -0400] [3611] [INFO] Booting worker with pid: 3611
+[2025-10-24 02:43:16 -0400] [3611] [INFO] Worker exiting (pid: 3611)
+[2025-10-24 02:43:16 -0400] [3610] [INFO] Worker exiting (pid: 3610)
+[2025-10-24 02:43:16 -0400] [3608] [INFO] Worker exiting (pid: 3608)
+[2025-10-24 02:43:16 -0400] [3609] [INFO] Worker exiting (pid: 3609)
+[2025-10-24 02:43:16 -0400] [3607] [INFO] Handling signal: term
+[2025-10-24 02:43:16 -0400] [3607] [ERROR] Worker (pid:3609) was sent SIGTERM!
+[2025-10-24 02:43:16 -0400] [3607] [ERROR] Worker (pid:3611) was sent SIGTERM!
+[2025-10-24 02:43:16 -0400] [3607] [ERROR] Worker (pid:3610) was sent SIGTERM!
+[2025-10-24 02:43:16 -0400] [3607] [ERROR] Worker (pid:3608) was sent SIGTERM!
+[2025-10-24 02:43:16 -0400] [3607] [INFO] Shutting down: Master
+[2025-10-24 02:43:24 -0400] [4808] [INFO] Starting gunicorn 23.0.0
+[2025-10-24 02:43:24 -0400] [4808] [INFO] Listening at: http://0.0.0.0:5000 (4808)
+[2025-10-24 02:43:24 -0400] [4808] [INFO] Using worker: sync
+[2025-10-24 02:43:24 -0400] [4809] [INFO] Booting worker with pid: 4809
+[2025-10-24 02:43:24 -0400] [4810] [INFO] Booting worker with pid: 4810
+[2025-10-24 02:43:24 -0400] [4811] [INFO] Booting worker with pid: 4811
+[2025-10-24 02:43:24 -0400] [4812] [INFO] Booting worker with pid: 4812
+[2025-10-24 02:43:25 -0400] [4809] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: table user already exists
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ubuntu/gantt-chart-tool/main.py", line 38, in <module>
+    db.create_all()
+  File "/usr/local/lib/python3.11/dist-packages/flask_sqlalchemy/extension.py", line 900, in create_all
+    self._call_for_binds(bind_key, "create_all")
+  File "/usr/local/lib/python3.11/dist-packages/flask_sqlalchemy/extension.py", line 881, in _call_for_binds
+    getattr(metadata, op_name)(bind=engine)
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/sql/schema.py", line 5924, in create_all
+    bind._run_ddl_visitor(
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/base.py", line 3248, in _run_ddl_visitor
+    conn._run_ddl_visitor(visitorcallable, element, **kwargs)
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/base.py", line 2455, in _run_ddl_visitor
+    ).traverse_single(element)
+      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/sql/visitors.py", line 664, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/sql/ddl.py", line 982, in visit_metadata
+    self.traverse_single(
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/sql/visitors.py", line 664, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/sql/ddl.py", line 1020, in visit_table
+    )._invoke_with(self.connection)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/sql/ddl.py", line 321, in _invoke_with
+    return bind.execute(self)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/base.py", line 1415, in execute
+    return meth(
+           ^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/sql/ddl.py", line 187, in _execute_on_connection
+    return connection._execute_ddl(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/base.py", line 1526, in _execute_ddl
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "/usr/local/lib/python3.11/dist-packages/sqlalchemy/engine/default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) table user already exists
+[SQL: 
+CREATE TABLE user (
+	id INTEGER NOT NULL, 
+	last_name VARCHAR(80) NOT NULL, 
+	first_name VARCHAR(80) NOT NULL, 
+	email VARCHAR(120) NOT NULL, 
+	password_hash VARCHAR(255) NOT NULL, 
+	is_admin BOOLEAN, 
+	created_at DATETIME, 
+	updated_at DATETIME, 
+	PRIMARY KEY (id), 
+	UNIQUE (email)
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2025-10-24 02:43:25 -0400] [4809] [INFO] Worker exiting (pid: 4809)
+[2025-10-24 02:43:25 -0400] [4808] [ERROR] Worker (pid:4809) exited with code 3
+[2025-10-24 02:43:25 -0400] [4812] [INFO] Worker exiting (pid: 4812)
+[2025-10-24 02:43:25 -0400] [4811] [INFO] Worker exiting (pid: 4811)
+[2025-10-24 02:43:25 -0400] [4810] [INFO] Worker exiting (pid: 4810)
+[2025-10-24 02:43:26 -0400] [4808] [ERROR] Shutting down: Master
+[2025-10-24 02:43:26 -0400] [4808] [ERROR] Reason: Worker failed to boot.
+[2025-10-24 02:43:52 -0400] [4843] [INFO] Starting gunicorn 23.0.0
+[2025-10-24 02:43:52 -0400] [4843] [INFO] Listening at: http://0.0.0.0:5000 (4843)
+[2025-10-24 02:43:52 -0400] [4843] [INFO] Using worker: sync
+[2025-10-24 02:43:52 -0400] [4844] [INFO] Booting worker with pid: 4844
+[2025-10-24 02:43:52 -0400] [4845] [INFO] Booting worker with pid: 4845
+[2025-10-24 02:43:52 -0400] [4846] [INFO] Booting worker with pid: 4846
+[2025-10-24 02:43:52 -0400] [4847] [INFO] Booting worker with pid: 4847
+[2025-10-24 02:57:40 -0400] [4846] [INFO] Worker exiting (pid: 4846)
+[2025-10-24 02:57:40 -0400] [4845] [INFO] Worker exiting (pid: 4845)
+[2025-10-24 02:57:40 -0400] [4847] [INFO] Worker exiting (pid: 4847)
+[2025-10-24 02:57:40 -0400] [4844] [INFO] Worker exiting (pid: 4844)
+[2025-10-24 02:57:40 -0400] [4843] [INFO] Handling signal: term
+[2025-10-24 02:57:40 -0400] [4843] [ERROR] Worker (pid:4846) was sent SIGTERM!
+[2025-10-24 02:57:40 -0400] [4843] [INFO] Shutting down: Master
+[2025-10-24 02:57:42 -0400] [5457] [INFO] Starting gunicorn 23.0.0
+[2025-10-24 02:57:42 -0400] [5457] [INFO] Listening at: http://0.0.0.0:5000 (5457)
+[2025-10-24 02:57:42 -0400] [5457] [INFO] Using worker: sync
+[2025-10-24 02:57:42 -0400] [5458] [INFO] Booting worker with pid: 5458
+[2025-10-24 02:57:42 -0400] [5459] [INFO] Booting worker with pid: 5459
+[2025-10-24 02:57:42 -0400] [5460] [INFO] Booting worker with pid: 5460
+[2025-10-24 02:57:42 -0400] [5461] [INFO] Booting worker with pid: 5461
+[2025-10-24 03:11:21 -0400] [5459] [INFO] Worker exiting (pid: 5459)
+[2025-10-24 03:11:21 -0400] [5458] [INFO] Worker exiting (pid: 5458)
+[2025-10-24 03:11:21 -0400] [5460] [INFO] Worker exiting (pid: 5460)
+[2025-10-24 03:11:21 -0400] [5461] [INFO] Worker exiting (pid: 5461)
+[2025-10-24 03:11:21 -0400] [5457] [INFO] Handling signal: term
+[2025-10-24 03:11:21 -0400] [5457] [ERROR] Worker (pid:5459) was sent SIGTERM!
+[2025-10-24 03:11:21 -0400] [5457] [ERROR] Worker (pid:5458) was sent SIGTERM!
+[2025-10-24 03:11:21 -0400] [5457] [INFO] Shutting down: Master
+[2025-10-24 03:11:23 -0400] [6064] [INFO] Starting gunicorn 23.0.0
+[2025-10-24 03:11:23 -0400] [6064] [INFO] Listening at: http://0.0.0.0:5000 (6064)
+[2025-10-24 03:11:23 -0400] [6064] [INFO] Using worker: sync
+[2025-10-24 03:11:23 -0400] [6065] [INFO] Booting worker with pid: 6065
+[2025-10-24 03:11:23 -0400] [6066] [INFO] Booting worker with pid: 6066
+[2025-10-24 03:11:23 -0400] [6067] [INFO] Booting worker with pid: 6067
+[2025-10-24 03:11:23 -0400] [6068] [INFO] Booting worker with pid: 6068
+[2025-10-24 03:14:04 -0400] [6065] [INFO] Worker exiting (pid: 6065)
+[2025-10-24 03:14:04 -0400] [6068] [INFO] Worker exiting (pid: 6068)
+[2025-10-24 03:14:04 -0400] [6066] [INFO] Worker exiting (pid: 6066)
+[2025-10-24 03:14:04 -0400] [6067] [INFO] Worker exiting (pid: 6067)
+[2025-10-24 03:14:04 -0400] [6064] [INFO] Handling signal: term
+[2025-10-24 03:14:04 -0400] [6064] [INFO] Shutting down: Master
+[2025-10-24 03:14:06 -0400] [6231] [INFO] Starting gunicorn 23.0.0
+[2025-10-24 03:14:06 -0400] [6231] [INFO] Listening at: http://0.0.0.0:5000 (6231)
+[2025-10-24 03:14:06 -0400] [6231] [INFO] Using worker: sync
+[2025-10-24 03:14:06 -0400] [6233] [INFO] Booting worker with pid: 6233
+[2025-10-24 03:14:06 -0400] [6234] [INFO] Booting worker with pid: 6234
+[2025-10-24 03:14:06 -0400] [6235] [INFO] Booting worker with pid: 6235
+[2025-10-24 03:14:06 -0400] [6236] [INFO] Booting worker with pid: 6236
+[2025-10-24 03:17:56 -0400] [6233] [INFO] Worker exiting (pid: 6233)
+[2025-10-24 03:17:56 -0400] [6235] [INFO] Worker exiting (pid: 6235)
+[2025-10-24 03:17:56 -0400] [6234] [INFO] Worker exiting (pid: 6234)
+[2025-10-24 03:17:56 -0400] [6236] [INFO] Worker exiting (pid: 6236)
+[2025-10-24 03:17:56 -0400] [6231] [INFO] Handling signal: term
+[2025-10-24 03:17:56 -0400] [6231] [ERROR] Worker (pid:6235) was sent SIGTERM!
+[2025-10-24 03:17:57 -0400] [6231] [INFO] Shutting down: Master
+[2025-10-24 03:17:58 -0400] [6476] [INFO] Starting gunicorn 23.0.0
+[2025-10-24 03:17:58 -0400] [6476] [INFO] Listening at: http://0.0.0.0:5000 (6476)
+[2025-10-24 03:17:58 -0400] [6476] [INFO] Using worker: sync
+[2025-10-24 03:17:58 -0400] [6477] [INFO] Booting worker with pid: 6477
+[2025-10-24 03:17:59 -0400] [6478] [INFO] Booting worker with pid: 6478
+[2025-10-24 03:17:59 -0400] [6479] [INFO] Booting worker with pid: 6479
+[2025-10-24 03:17:59 -0400] [6480] [INFO] Booting worker with pid: 6480
+[2025-10-24 03:23:47 -0400] [6480] [INFO] Worker exiting (pid: 6480)
+[2025-10-24 03:23:47 -0400] [6479] [INFO] Worker exiting (pid: 6479)
+[2025-10-24 03:23:47 -0400] [6477] [INFO] Worker exiting (pid: 6477)
+[2025-10-24 03:23:47 -0400] [6478] [INFO] Worker exiting (pid: 6478)
+[2025-10-24 03:23:47 -0400] [6476] [INFO] Handling signal: term
+[2025-10-24 03:23:47 -0400] [6476] [ERROR] Worker (pid:6480) was sent SIGTERM!
+[2025-10-24 03:23:47 -0400] [6476] [ERROR] Worker (pid:6477) was sent SIGTERM!
+[2025-10-24 03:23:48 -0400] [6476] [INFO] Shutting down: Master
+[2025-10-24 03:23:50 -0400] [6784] [INFO] Starting gunicorn 23.0.0
+[2025-10-24 03:23:50 -0400] [6784] [INFO] Listening at: http://0.0.0.0:5000 (6784)
+[2025-10-24 03:23:50 -0400] [6784] [INFO] Using worker: sync
+[2025-10-24 03:23:50 -0400] [6785] [INFO] Booting worker with pid: 6785
+[2025-10-24 03:23:50 -0400] [6786] [INFO] Booting worker with pid: 6786
+[2025-10-24 03:23:50 -0400] [6787] [INFO] Booting worker with pid: 6787
+[2025-10-24 03:23:50 -0400] [6788] [INFO] Booting worker with pid: 6788
+[2025-10-24 03:25:16,808] ERROR in app: Exception on /api/projects/2/tasks [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/gantt-chart-tool/src/routes/auth.py", line 13, in decorated_function
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/gantt-chart-tool/src/routes/task.py", line 22, in create_task
+    start_date=datetime.fromisoformat(data['start_date']).date(),
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Invalid isoformat string: '41024-02-02'
+[2025-10-24 03:26:44,173] ERROR in app: Exception on /api/projects/2/tasks [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/gantt-chart-tool/src/routes/auth.py", line 13, in decorated_function
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/gantt-chart-tool/src/routes/task.py", line 22, in create_task
+    start_date=datetime.fromisoformat(data['start_date']).date(),
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Invalid isoformat string: '50224-02-02'
+[2025-10-24 03:39:53 -0400] [6786] [INFO] Worker exiting (pid: 6786)
+[2025-10-24 03:39:53 -0400] [6787] [INFO] Worker exiting (pid: 6787)
+[2025-10-24 03:39:53 -0400] [6788] [INFO] Worker exiting (pid: 6788)
+[2025-10-24 03:39:53 -0400] [6785] [INFO] Worker exiting (pid: 6785)
+[2025-10-24 03:39:53 -0400] [6784] [INFO] Handling signal: term
+[2025-10-24 03:39:53 -0400] [6784] [ERROR] Worker (pid:6787) was sent SIGTERM!
+[2025-10-24 03:39:53 -0400] [6784] [ERROR] Worker (pid:6785) was sent SIGTERM!
+[2025-10-24 03:39:53 -0400] [6784] [ERROR] Worker (pid:6786) was sent SIGTERM!
+[2025-10-24 03:39:53 -0400] [6784] [ERROR] Worker (pid:6788) was sent SIGTERM!
+[2025-10-24 03:39:53 -0400] [6784] [INFO] Shutting down: Master
+[2025-10-24 03:39:55 -0400] [7470] [INFO] Starting gunicorn 23.0.0
+[2025-10-24 03:39:55 -0400] [7470] [INFO] Listening at: http://0.0.0.0:5000 (7470)
+[2025-10-24 03:39:55 -0400] [7470] [INFO] Using worker: sync
+[2025-10-24 03:39:55 -0400] [7471] [INFO] Booting worker with pid: 7471
+[2025-10-24 03:39:55 -0400] [7472] [INFO] Booting worker with pid: 7472
+[2025-10-24 03:39:55 -0400] [7473] [INFO] Booting worker with pid: 7473
+[2025-10-24 03:39:55 -0400] [7474] [INFO] Booting worker with pid: 7474
+[2025-10-24 03:55:51 -0400] [7471] [INFO] Worker exiting (pid: 7471)
+[2025-10-24 03:55:51 -0400] [7472] [INFO] Worker exiting (pid: 7472)
+[2025-10-24 03:55:51 -0400] [7474] [INFO] Worker exiting (pid: 7474)
+[2025-10-24 03:55:51 -0400] [7473] [INFO] Worker exiting (pid: 7473)
+[2025-10-24 03:55:51 -0400] [7470] [INFO] Handling signal: term
+[2025-10-24 03:55:51 -0400] [7470] [ERROR] Worker (pid:7474) was sent SIGTERM!
+[2025-10-24 03:55:51 -0400] [7470] [ERROR] Worker (pid:7473) was sent SIGTERM!
+[2025-10-24 03:55:51 -0400] [7470] [ERROR] Worker (pid:7471) was sent SIGTERM!
+[2025-10-24 03:55:51 -0400] [7470] [ERROR] Worker (pid:7472) was sent SIGTERM!
+[2025-10-24 03:55:51 -0400] [7470] [INFO] Shutting down: Master
