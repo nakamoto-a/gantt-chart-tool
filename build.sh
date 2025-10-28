@@ -8,7 +8,7 @@ pip install -r requirements.txt
 # Install Node.js dependencies and build frontend
 cd frontend
 npm install --legacy-peer-deps
-npm run build
+npm run build --legacy-peer-deps
 cd ..
 
 # Copy built frontend to static folder
